@@ -11,3 +11,19 @@
 Решите через рекурсию. Решение через цикл не принимается.
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+
+import random
+
+randnum = random.randint(0, 11)
+
+
+def forecaster(randnum, t):
+    answer = int(input('Введите число\n'))
+    if randnum == answer:
+        print(f'Верно! Вы угадали число!')
+    elif answer != randnum:
+        print(f'Неверно, попробуйте еще раз, увас осталось {t - 1} попыток.')
+        return forecaster(randnum, t - 1)
+
+
+forecaster(randnum, 10)
