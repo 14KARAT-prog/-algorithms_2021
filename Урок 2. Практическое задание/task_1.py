@@ -28,3 +28,35 @@
 Решите через рекурсию. Решение через цикл не принимается.
 Для оценки Отлично в этом блоке необходимо выполнить 5 заданий из 7
 """
+def calc():
+    oper = input("Введите операцию (+, -, *, / или 0 для выхода): ")
+    num_1 = int(input("Введите первое число: "))
+    num_2 = int(input("Введите второе число: "))
+    if oper == '0':
+        quit()
+    elif oper == '+':
+        num_3 = num_1 + num_2
+        print(f'Ваш результат {num_3}')
+        return calc()
+    elif oper == '-':
+        num_3 = num_1 - num_2
+        print(f'Ваш результат {num_3}')
+        return calc()
+    elif oper == '*':
+        num_3 = num_1 * num_2
+        print(f'Ваш результат {num_3}')
+        return calc()
+
+    elif oper == '/' and num_2 == 0:
+        print("На ноль делить нельзя!")
+        return calc()
+
+    elif oper == '/':
+        num_3 = num_1 / num_2
+        print(f'Ваш результат {num_3}')
+        return calc()
+    else:
+        print("Введите знак операции!")
+        return calc()
+
+calc()
